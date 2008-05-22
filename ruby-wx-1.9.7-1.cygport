@@ -1,0 +1,16 @@
+ORIG_PN="wxruby"
+inherit ruby
+
+DESCRIPTION="Ruby wxWidgets bindings"
+HOMEPAGE="http://wxruby.rubyforge.org/"
+SRC_URI="mirror://rubyforge/wxruby/${ORIG_PN}-${PV}.tar.gz"
+
+export WXRUBY_NO_UNICODE=true
+
+src_install() {
+	cd ${B}
+	dodir ${RUBY_SITELIB}
+	cp -Lr lib/wx.rb lib/wx/ ${D}${RUBY_SITELIB}/
+	exeinto ${RUBY_SITEARCH}
+	doexe lib/wxruby2.so
+}

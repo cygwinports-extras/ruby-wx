@@ -1,0 +1,38 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/wxruby-1.9.7/rake/rakecygwin.rb src/wxruby-1.9.7/rake/rakecygwin.rb
+--- origsrc/wxruby-1.9.7/rake/rakecygwin.rb	2008-05-10 05:01:08.000000000 -0500
++++ src/wxruby-1.9.7/rake/rakecygwin.rb	2008-05-22 07:23:30.562500000 -0500
+@@ -6,6 +6,8 @@
+ #############################
+ # platform-dependent settings
+ 
+-use_wx_config
++require 'rake/rakelinux'
+ 
+ $extra_ld_flags = '-shared'
++
++$extra_libs += File.join(Config::CONFIG['libdir'], Config::CONFIG['LIBRUBY'])
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/wxruby-1.9.7/rake/rakeunixish.rb src/wxruby-1.9.7/rake/rakeunixish.rb
+--- origsrc/wxruby-1.9.7/rake/rakeunixish.rb	2008-05-10 05:01:08.000000000 -0500
++++ src/wxruby-1.9.7/rake/rakeunixish.rb	2008-05-22 07:28:36.046875000 -0500
+@@ -139,9 +139,7 @@
+ # monolithic build (in which case, the link deps are the same). If not
+ # monolithic, need to add wxmedia to the list of required libs
+ if not $excluded_classes.include?('MediaCtrl') 
+-  if wx_config('--linkdeps std') != wx_config('--linkdeps std,media')
+     libs_str << ',media'
+-  end
+ end
+ 
+ # Set the final list of libs to be used
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/wxruby-1.9.7/swig/classes/include/wxStyledTextCtrl.h src/wxruby-1.9.7/swig/classes/include/wxStyledTextCtrl.h
+--- origsrc/wxruby-1.9.7/swig/classes/include/wxStyledTextCtrl.h	2008-05-10 05:01:21.000000000 -0500
++++ src/wxruby-1.9.7/swig/classes/include/wxStyledTextCtrl.h	2008-05-22 07:07:08.687500000 -0500
+@@ -1791,7 +1791,7 @@
+ 
+ //----------------------------------------------------------------------
+ 
+-class WXDLLIMPEXP_STC wxStyledTextCtrl : public wxControl {
++class wxStyledTextCtrl : public wxControl {
+ public:
+ 
+ 
