@@ -4,6 +4,13 @@ inherit ruby
 DESCRIPTION="Ruby wxWidgets bindings"
 HOMEPAGE="http://wxruby.rubyforge.org/"
 SRC_URI="mirror://rubyforge/wxruby/${ORIG_PN}-${PV}.tar.gz"
+PATCH_URI="
+	1.9.7-cygwin.patch
+	1.9.7-stc-build.patch
+	1.9.8-swig-current.patch
+"
+
+RDOC_SOURCE="lib"
 
 export WXRUBY_NO_UNICODE=true
 
@@ -13,4 +20,7 @@ src_install() {
 	cp -Lr lib/wx.rb lib/wx/ ${D}${RUBY_SITELIB}/
 	exeinto ${RUBY_SITEARCH}
 	doexe lib/wxruby2.so
+
+	dodir /usr/share/ri/${RUBY_VERSION}/site
+	cp -r .rdoc/*/ ${D}/usr/share/ri/${RUBY_VERSION}/site/
 }
