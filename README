@@ -7,14 +7,14 @@ based on the cross-platform wxWidgets C++ GUI framework.
 
 Runtime requirements:
   cygwin-1.5.25-15
-  ruby-1.8.7_p72-1
-  wx28-base-2.8.8.0-1
-  wx28-gtk2-2.8.8.0-1
+  ruby-1.8.7_p72-2
+  wx28-base-2.8.9.1-1
+  wx28-gtk2-2.8.9.1-1
 
 Build requirements:
 (besides corresponding -devel packages)
   binutils-20080624-2
-  cygport-0.4.1-1
+  cygport-0.4.2-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
   rake-0.7.2-1
@@ -89,10 +89,12 @@ Files included in the binary package:
   /usr/lib/ruby/site_ruby/1.8/wx/classes/point.rb
   /usr/lib/ruby/site_ruby/1.8/wx/classes/previewframe.rb
   /usr/lib/ruby/site_ruby/1.8/wx/classes/rect.rb
+  /usr/lib/ruby/site_ruby/1.8/wx/classes/richtextctrl.rb
   /usr/lib/ruby/site_ruby/1.8/wx/classes/simplehelpprovider.rb
   /usr/lib/ruby/site_ruby/1.8/wx/classes/size.rb
   /usr/lib/ruby/site_ruby/1.8/wx/classes/sizer.rb
   /usr/lib/ruby/site_ruby/1.8/wx/classes/sound.rb
+  /usr/lib/ruby/site_ruby/1.8/wx/classes/standardpaths.rb
   /usr/lib/ruby/site_ruby/1.8/wx/classes/styledtextctrl.rb
   /usr/lib/ruby/site_ruby/1.8/wx/classes/textctrl.rb
   /usr/lib/ruby/site_ruby/1.8/wx/classes/texturlevent.rb
@@ -106,10 +108,10 @@ Files included in the binary package:
   /usr/lib/ruby/site_ruby/1.8/wx/keyword_ctors.rb
   /usr/lib/ruby/site_ruby/1.8/wx/keyword_defs.rb
   /usr/lib/ruby/site_ruby/1.8/wx/version.rb
-  /usr/share/doc/Cygwin/ruby-wx-1.9.8.README
-  /usr/share/doc/ruby-wx-1.9.8/ChangeLog
-  /usr/share/doc/ruby-wx-1.9.8/LICENSE
-  /usr/share/doc/ruby-wx-1.9.8/README
+  /usr/share/doc/Cygwin/ruby-wx-1.9.9.README
+  /usr/share/doc/ruby-wx-1.9.9/ChangeLog
+  /usr/share/doc/ruby-wx-1.9.9/LICENSE
+  /usr/share/doc/ruby-wx-1.9.9/README
   /usr/share/ri/1.8/site/Wx/AcceleratorTable/cdesc-AcceleratorTable.yaml
   /usr/share/ri/1.8/site/Wx/Animation/cdesc-Animation.yaml
   /usr/share/ri/1.8/site/Wx/App/cdesc-App.yaml
@@ -222,6 +224,7 @@ Files included in the binary package:
   /usr/share/ri/1.8/site/Wx/PreviewFrame/cdesc-PreviewFrame.yaml
   /usr/share/ri/1.8/site/Wx/Rect/cdesc-Rect.yaml
   /usr/share/ri/1.8/site/Wx/Rect/to_s-i.yaml
+  /usr/share/ri/1.8/site/Wx/RichTextCtrl/cdesc-RichTextCtrl.yaml
   /usr/share/ri/1.8/site/Wx/SimpleHelpProvider/add_help-i.yaml
   /usr/share/ri/1.8/site/Wx/SimpleHelpProvider/cdesc-SimpleHelpProvider.yaml
   /usr/share/ri/1.8/site/Wx/SimpleHelpProvider/get_help-i.yaml
@@ -238,6 +241,7 @@ Files included in the binary package:
   /usr/share/ri/1.8/site/Wx/Sizer/cdesc-Sizer.yaml
   /usr/share/ri/1.8/site/Wx/Sound/cdesc-Sound.yaml
   /usr/share/ri/1.8/site/Wx/Sound/play-c.yaml
+  /usr/share/ri/1.8/site/Wx/StandardPaths/cdesc-StandardPaths.yaml
   /usr/share/ri/1.8/site/Wx/TextCtrl/cdesc-TextCtrl.yaml
   /usr/share/ri/1.8/site/Wx/TextUrlEvent/cdesc-TextUrlEvent.yaml
   /usr/share/ri/1.8/site/Wx/TextUrlEvent/get_url-i.yaml
@@ -263,7 +267,6 @@ Files included in the binary package:
   /usr/share/ri/1.8/site/Wx/define_keyword_ctors-c.yaml
   /usr/share/ri/1.8/site/WxRubyStyleAccessors/cdesc-WxRubyStyleAccessors.yaml
   /usr/share/ri/1.8/site/WxRubyStyleAccessors/method_missing-i.yaml
-  /usr/share/ri/1.8/site/created.rid
 
 ------------------
 
