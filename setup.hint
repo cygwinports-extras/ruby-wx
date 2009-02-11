@@ -1,5 +1,5 @@
 category: Gnome Ruby
-requires: cygwin ruby wx28-base wx28-gtk2
+requires: cygwin ruby libwxbase2.8_0 libwxgtk2.8_0
 sdesc: "Ruby wxGTK bindings"
 ldesc: "wxRuby is an open source GUI toolkit for the Ruby programming
 language. It allows native-looking desktop applications to be written

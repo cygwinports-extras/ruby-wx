@@ -8,8 +8,8 @@ based on the cross-platform wxWidgets C++ GUI framework.
 Runtime requirements:
   cygwin-1.5.25-15
   ruby-1.8.7_p72-2
-  wx28-base-2.8.9.1-1
-  wx28-gtk2-2.8.9.1-1
+  libwxbase2.8_0-2.8.9.1-2
+  libwxgtk2.8_0-2.8.9.1-2
 
 Build requirements:
 (besides corresponding -devel packages)
@@ -301,6 +301,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 1.9.10-2 -----
+Enabled wxDisplay (Xinerama) support.
 
 ----- version 1.9.10-1 -----
 Version bump.
