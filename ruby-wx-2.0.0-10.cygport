@@ -1,5 +1,6 @@
 ORIG_PN="wxruby"
-inherit ruby
+WX_VERSION=2.8
+inherit ruby wxwidgets
 
 DESCRIPTION="Ruby wxWidgets bindings"
 HOMEPAGE="http://wxruby.rubyforge.org/"
@@ -10,8 +11,6 @@ PATCH_URI="
 "
 
 RDOC_SOURCE="lib"
-
-export WXRUBY_NO_UNICODE=true
 
 src_install() {
 	cd ${B}

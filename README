@@ -6,19 +6,21 @@ for Windows, OS X, Linux GTK and other platforms using only Ruby. It's
 based on the cross-platform wxWidgets C++ GUI framework.
 
 Runtime requirements:
-  cygwin-1.5.25-15
-  ruby-1.8.7_p72-2
-  libwxbase2.8_0-2.8.9.2-1
-  libwxgtk2.8_0-2.8.9.2-1
+  cygwin-1.7.0-44
+  libgcc1-4.3.2-2
+  libstdc++6-4.3.2-2
+  libwx_baseu2.8_0-2.8.9.2-10
+  libwx_gtk2u2.8_0-2.8.9.2-10
+  ruby-1.8.7_p72-10
 
 Build requirements:
 (besides corresponding -devel packages)
   binutils-20080624-2
-  cygport-0.4.3-1
-  gcc-core-3.4.4-3
-  gcc-g++-3.4.4-3
-  rake-0.8.3-1
-  swig-1.3.36-1
+  cygport-0.9.6-1
+  gcc4-core-4.3.2-2
+  gcc4-g++-4.3.2-2
+  rake-0.8.4-1
+  swig-1.3.36-10
 
 Canonical website:
   http://wxruby.rubyforge.org/wiki/wiki.pl
@@ -302,20 +304,8 @@ Files included in the binary package:
 
 Port Notes:
 
------ version 2.0.0-1 -----
-Version bump.
-
------ version 1.9.10-2 -----
-Enabled wxDisplay (Xinerama) support.
-
------ version 1.9.10-1 -----
-Version bump.
-
------ version 1.9.8-1 -----
-Version bump.
-
------ version 1.9.7-1 -----
-Initial release of 2.x branch for Cygwin.
+----- version 2.0.0-10 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
