@@ -6,21 +6,21 @@ for Windows, OS X, Linux GTK and other platforms using only Ruby. It's
 based on the cross-platform wxWidgets C++ GUI framework.
 
 Runtime requirements:
-  cygwin-1.7.0-44
+  cygwin-1.7.0-60
   libgcc1-4.3.2-2
   libstdc++6-4.3.2-2
-  libwx_baseu2.8_0-2.8.9.2-10
-  libwx_gtk2u2.8_0-2.8.9.2-10
+  libwx_baseu2.8_0-2.8.10.1-1
+  libwx_gtk2u2.8_0-2.8.10.1-1
   ruby-1.8.7_p72-10
 
 Build requirements:
 (besides corresponding -devel packages)
-  binutils-20080624-2
-  cygport-0.9.6-1
+  binutils-2.19.51-1
+  cygport-0.9.9-1
   gcc4-core-4.3.2-2
   gcc4-g++-4.3.2-2
   rake-0.8.4-1
-  swig-1.3.36-10
+  swig-1.3.38-1
 
 Canonical website:
   http://wxruby.rubyforge.org/wiki/wiki.pl
@@ -31,278 +31,22 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack ruby-wx-2.0.0-X-src.tar.bz2
+  unpack ruby-wx-2.0.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./ruby-wx-2.0.0-X.cygport all
+  cygport ./ruby-wx-2.0.1-X.cygport all
 
 This will create:
-  /usr/src/ruby-wx-2.0.0-X-src.tar.bz2
-  /usr/src/ruby-wx-2.0.0-X.tar.bz2
+  /usr/src/ruby-wx-2.0.1-X-src.tar.bz2
+  /usr/src/ruby-wx-2.0.1-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
-
-  /usr/lib/ruby/site_ruby/1.8/i386-cygwin/wxruby2.so
-  /usr/lib/ruby/site_ruby/1.8/wx.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/accessors.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/acceleratortable.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/animation.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/app.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/artprovider.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/auinotebook.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/bitmap.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/busycursor.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/checklistbox.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/choice.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/clientdc.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/clipboard.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/colour.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/combobox.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/commandevent.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/controlwithitems.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/data_object.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/data_object_simple.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/dataformat.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/dc.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/event.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/evthandler.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/font.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/functions.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/gauge.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/genericdirctrl.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/grid.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/hboxsizer.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/helpcontroller.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/helpcontrollerhelpprovider.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/helpprovider.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/htmlhelpcontroller.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/htmlwindow.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/icon.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/iconbundle.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/image.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/imagelist.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/listbox.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/listctrl.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/locale.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/mediactrl.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/menu.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/menuitem.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/notebook.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/object.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/paintdc.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/point.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/previewframe.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/rect.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/richtextctrl.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/simplehelpprovider.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/size.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/sizer.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/sound.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/standardpaths.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/styledtextctrl.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/textctrl.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/texturlevent.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/timer.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/toolbar.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/toolbartool.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/treectrl.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/vboxsizer.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/window.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/classes/xmlresource.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/helpers.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/keyword_ctors.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/keyword_defs.rb
-  /usr/lib/ruby/site_ruby/1.8/wx/version.rb
-  /usr/share/doc/ruby-wx-2.0.0/ChangeLog
-  /usr/share/doc/ruby-wx-2.0.0/LICENSE
-  /usr/share/doc/ruby-wx-2.0.0/README
-  /usr/share/ri/1.8/site/Wx/AcceleratorTable/cdesc-AcceleratorTable.yaml
-  /usr/share/ri/1.8/site/Wx/Animation/cdesc-Animation.yaml
-  /usr/share/ri/1.8/site/Wx/App/cdesc-App.yaml
-  /usr/share/ri/1.8/site/Wx/App/gc_stress-i.yaml
-  /usr/share/ri/1.8/site/Wx/App/is_main_loop_running-i.yaml
-  /usr/share/ri/1.8/site/Wx/App/run-c.yaml
-  /usr/share/ri/1.8/site/Wx/ArtProvider/cdesc-ArtProvider.yaml
-  /usr/share/ri/1.8/site/Wx/AuiNotebook/cdesc-AuiNotebook.yaml
-  /usr/share/ri/1.8/site/Wx/AuiNotebook/each_page-i.yaml
-  /usr/share/ri/1.8/site/Wx/Bitmap/cdesc-Bitmap.yaml
-  /usr/share/ri/1.8/site/Wx/Bitmap/draw-i.yaml
-  /usr/share/ri/1.8/site/Wx/Bitmap/from_image-c.yaml
-  /usr/share/ri/1.8/site/Wx/BusyCursor/busy-c.yaml
-  /usr/share/ri/1.8/site/Wx/BusyCursor/cdesc-BusyCursor.yaml
-  /usr/share/ri/1.8/site/Wx/CheckListBox/append-i.yaml
-  /usr/share/ri/1.8/site/Wx/CheckListBox/cdesc-CheckListBox.yaml
-  /usr/share/ri/1.8/site/Wx/CheckListBox/clear-i.yaml
-  /usr/share/ri/1.8/site/Wx/CheckListBox/get_checked_items-i.yaml
-  /usr/share/ri/1.8/site/Wx/CheckListBox/get_item_data-i.yaml
-  /usr/share/ri/1.8/site/Wx/CheckListBox/set_item_data-i.yaml
-  /usr/share/ri/1.8/site/Wx/Choice/cdesc-Choice.yaml
-  /usr/share/ri/1.8/site/Wx/ClientDC/cdesc-ClientDC.yaml
-  /usr/share/ri/1.8/site/Wx/Clipboard/cdesc-Clipboard.yaml
-  /usr/share/ri/1.8/site/Wx/Clipboard/open-c.yaml
-  /usr/share/ri/1.8/site/Wx/Colour/%3d%3d-i.yaml
-  /usr/share/ri/1.8/site/Wx/Colour/cdesc-Colour.yaml
-  /usr/share/ri/1.8/site/Wx/Colour/to_s-i.yaml
-  /usr/share/ri/1.8/site/Wx/ComboBox/cdesc-ComboBox.yaml
-  /usr/share/ri/1.8/site/Wx/CommandEvent/cdesc-CommandEvent.yaml
-  /usr/share/ri/1.8/site/Wx/ControlWithItems/cdesc-ControlWithItems.yaml
-  /usr/share/ri/1.8/site/Wx/ControlWithItems/each-i.yaml
-  /usr/share/ri/1.8/site/Wx/DC/cdesc-DC.yaml
-  /usr/share/ri/1.8/site/Wx/DataFormat/%3d%3d-i.yaml
-  /usr/share/ri/1.8/site/Wx/DataFormat/cdesc-DataFormat.yaml
-  /usr/share/ri/1.8/site/Wx/DataObject/cdesc-DataObject.yaml
-  /usr/share/ri/1.8/site/Wx/DataObject/get_data_size-i.yaml
-  /usr/share/ri/1.8/site/Wx/DataObject/get_format_count-i.yaml
-  /usr/share/ri/1.8/site/Wx/DataObject/get_preferred_format-i.yaml
-  /usr/share/ri/1.8/site/Wx/DataObjectSimple/cdesc-DataObjectSimple.yaml
-  /usr/share/ri/1.8/site/Wx/DataObjectSimple/get_data_size-i.yaml
-  /usr/share/ri/1.8/site/Wx/Event/cdesc-Event.yaml
-  /usr/share/ri/1.8/site/Wx/EvtHandler/cdesc-EvtHandler.yaml
-  /usr/share/ri/1.8/site/Wx/EvtHandler/const_to_name-c.yaml
-  /usr/share/ri/1.8/site/Wx/EvtHandler/event_class_for_type-c.yaml
-  /usr/share/ri/1.8/site/Wx/EvtHandler/event_name_for_type-c.yaml
-  /usr/share/ri/1.8/site/Wx/EvtHandler/event_type_for_name-c.yaml
-  /usr/share/ri/1.8/site/Wx/EvtHandler/evt_mouse_events-i.yaml
-  /usr/share/ri/1.8/site/Wx/EvtHandler/evt_scrollwin-i.yaml
-  /usr/share/ri/1.8/site/Wx/EvtHandler/register_class-c.yaml
-  /usr/share/ri/1.8/site/Wx/EvtHandler/register_event_type-c.yaml
-  /usr/share/ri/1.8/site/Wx/Font/cdesc-Font.yaml
-  /usr/share/ri/1.8/site/Wx/Font/get_default_encoding_name-c.yaml
-  /usr/share/ri/1.8/site/Wx/Font/set_default_encoding_name-c.yaml
-  /usr/share/ri/1.8/site/Wx/GenericDirCtrl/DirCtrlTree/cdesc-DirCtrlTree.yaml
-  /usr/share/ri/1.8/site/Wx/GenericDirCtrl/DirCtrlTree/get_item_data-i.yaml
-  /usr/share/ri/1.8/site/Wx/GenericDirCtrl/DirCtrlTree/get_item_path-i.yaml
-  /usr/share/ri/1.8/site/Wx/GenericDirCtrl/DirCtrlTree/set_item_data-i.yaml
-  /usr/share/ri/1.8/site/Wx/GenericDirCtrl/cdesc-GenericDirCtrl.yaml
-  /usr/share/ri/1.8/site/Wx/Grid/cdesc-Grid.yaml
-  /usr/share/ri/1.8/site/Wx/Grid/delete_cols-i.yaml
-  /usr/share/ri/1.8/site/Wx/Grid/delete_rows-i.yaml
-  /usr/share/ri/1.8/site/Wx/Grid/insert_cols-i.yaml
-  /usr/share/ri/1.8/site/Wx/Grid/insert_rows-i.yaml
-  /usr/share/ri/1.8/site/Wx/Grid/register_data_type-i.yaml
-  /usr/share/ri/1.8/site/Wx/Grid/set_table-i.yaml
-  /usr/share/ri/1.8/site/Wx/HBoxSizer/cdesc-HBoxSizer.yaml
-  /usr/share/ri/1.8/site/Wx/HBoxSizer/new-c.yaml
-  /usr/share/ri/1.8/site/Wx/HelpController/cdesc-HelpController.yaml
-  /usr/share/ri/1.8/site/Wx/HelpController/instance-c.yaml
-  /usr/share/ri/1.8/site/Wx/HelpControllerHelpProvider/cdesc-HelpControllerHelpProvider.yaml
-  /usr/share/ri/1.8/site/Wx/HelpControllerHelpProvider/new-c.yaml
-  /usr/share/ri/1.8/site/Wx/HelpControllerHelpProvider/show_help-i.yaml
-  /usr/share/ri/1.8/site/Wx/HelpProvider/cdesc-HelpProvider.yaml
-  /usr/share/ri/1.8/site/Wx/HtmlHelpController/cdesc-HtmlHelpController.yaml
-  /usr/share/ri/1.8/site/Wx/HtmlHelpController/instance-c.yaml
-  /usr/share/ri/1.8/site/Wx/HtmlWindow/cdesc-HtmlWindow.yaml
-  /usr/share/ri/1.8/site/Wx/HtmlWindow/load_file-i.yaml
-  /usr/share/ri/1.8/site/Wx/HtmlWindow/on_opening_url-i.yaml
-  /usr/share/ri/1.8/site/Wx/Icon/cdesc-Icon.yaml
-  /usr/share/ri/1.8/site/Wx/Icon/from_bitmap-c.yaml
-  /usr/share/ri/1.8/site/Wx/IconBundle/cdesc-IconBundle.yaml
-  /usr/share/ri/1.8/site/Wx/Image/cdesc-Image.yaml
-  /usr/share/ri/1.8/site/Wx/Image/convert_to_bitmap-i.yaml
-  /usr/share/ri/1.8/site/Wx/Image/from_bitmap-c.yaml
-  /usr/share/ri/1.8/site/Wx/Image/read-c.yaml
-  /usr/share/ri/1.8/site/Wx/ImageList/cdesc-ImageList.yaml
-  /usr/share/ri/1.8/site/Wx/KeywordConstructor/ClassMethods/args_as_hash-i.yaml
-  /usr/share/ri/1.8/site/Wx/KeywordConstructor/ClassMethods/args_as_list-i.yaml
-  /usr/share/ri/1.8/site/Wx/KeywordConstructor/ClassMethods/cdesc-ClassMethods.yaml
-  /usr/share/ri/1.8/site/Wx/KeywordConstructor/ClassMethods/describe_constructor-i.yaml
-  /usr/share/ri/1.8/site/Wx/KeywordConstructor/ClassMethods/param_spec-i.yaml
-  /usr/share/ri/1.8/site/Wx/KeywordConstructor/ClassMethods/wx_ctor_params-i.yaml
-  /usr/share/ri/1.8/site/Wx/KeywordConstructor/cdesc-KeywordConstructor.yaml
-  /usr/share/ri/1.8/site/Wx/KeywordConstructor/included-c.yaml
-  /usr/share/ri/1.8/site/Wx/KeywordConstructor/new-c.yaml
-  /usr/share/ri/1.8/site/Wx/ListBox/cdesc-ListBox.yaml
-  /usr/share/ri/1.8/site/Wx/ListCtrl/cdesc-ListCtrl.yaml
-  /usr/share/ri/1.8/site/Wx/ListCtrl/each-i.yaml
-  /usr/share/ri/1.8/site/Wx/ListCtrl/get_selections-i.yaml
-  /usr/share/ri/1.8/site/Wx/ListCtrl/on_get_item_attr-i.yaml
-  /usr/share/ri/1.8/site/Wx/ListCtrl/on_get_item_column_image-i.yaml
-  /usr/share/ri/1.8/site/Wx/Locale/cdesc-Locale.yaml
-  /usr/share/ri/1.8/site/Wx/Locale/get_language_name-i.yaml
-  /usr/share/ri/1.8/site/Wx/Locale/get_system_encoding_name-c.yaml
-  /usr/share/ri/1.8/site/Wx/Locale/get_system_language_name-c.yaml
-  /usr/share/ri/1.8/site/Wx/Locale/set_locale-c.yaml
-  /usr/share/ri/1.8/site/Wx/MediaCtrl/cdesc-MediaCtrl.yaml
-  /usr/share/ri/1.8/site/Wx/MediaCtrl/is_paused-i.yaml
-  /usr/share/ri/1.8/site/Wx/MediaCtrl/is_playing-i.yaml
-  /usr/share/ri/1.8/site/Wx/MediaCtrl/is_stopped-i.yaml
-  /usr/share/ri/1.8/site/Wx/Menu/cdesc-Menu.yaml
-  /usr/share/ri/1.8/site/Wx/Menu/methods_with_optional_ids-c.yaml
-  /usr/share/ri/1.8/site/Wx/Menu/methods_with_optional_ids_and_pos-c.yaml
-  /usr/share/ri/1.8/site/Wx/MenuItem/cdesc-MenuItem.yaml
-  /usr/share/ri/1.8/site/Wx/Notebook/cdesc-Notebook.yaml
-  /usr/share/ri/1.8/site/Wx/Notebook/each_page-i.yaml
-  /usr/share/ri/1.8/site/Wx/Object/cdesc-Object.yaml
-  /usr/share/ri/1.8/site/Wx/Object/ptr_addr-i.yaml
-  /usr/share/ri/1.8/site/Wx/Object/to_s-i.yaml
-  /usr/share/ri/1.8/site/Wx/PaintDC/cdesc-PaintDC.yaml
-  /usr/share/ri/1.8/site/Wx/Point/%2a-i.yaml
-  /usr/share/ri/1.8/site/Wx/Point/%2b-i.yaml
-  /usr/share/ri/1.8/site/Wx/Point/%2d-i.yaml
-  /usr/share/ri/1.8/site/Wx/Point/%2f-i.yaml
-  /usr/share/ri/1.8/site/Wx/Point/%3d%3d-i.yaml
-  /usr/share/ri/1.8/site/Wx/Point/cdesc-Point.yaml
-  /usr/share/ri/1.8/site/Wx/Point/to_s-i.yaml
-  /usr/share/ri/1.8/site/Wx/PreviewFrame/cdesc-PreviewFrame.yaml
-  /usr/share/ri/1.8/site/Wx/Rect/%3d%3d-i.yaml
-  /usr/share/ri/1.8/site/Wx/Rect/cdesc-Rect.yaml
-  /usr/share/ri/1.8/site/Wx/Rect/to_s-i.yaml
-  /usr/share/ri/1.8/site/Wx/RichTextCtrl/cdesc-RichTextCtrl.yaml
-  /usr/share/ri/1.8/site/Wx/SimpleHelpProvider/add_help-i.yaml
-  /usr/share/ri/1.8/site/Wx/SimpleHelpProvider/cdesc-SimpleHelpProvider.yaml
-  /usr/share/ri/1.8/site/Wx/SimpleHelpProvider/get_help-i.yaml
-  /usr/share/ri/1.8/site/Wx/SimpleHelpProvider/new-c.yaml
-  /usr/share/ri/1.8/site/Wx/SimpleHelpProvider/remove_help-i.yaml
-  /usr/share/ri/1.8/site/Wx/SimpleHelpProvider/show_help-i.yaml
-  /usr/share/ri/1.8/site/Wx/Size/%2a-i.yaml
-  /usr/share/ri/1.8/site/Wx/Size/%2b-i.yaml
-  /usr/share/ri/1.8/site/Wx/Size/%2d-i.yaml
-  /usr/share/ri/1.8/site/Wx/Size/%2f-i.yaml
-  /usr/share/ri/1.8/site/Wx/Size/%3d%3d-i.yaml
-  /usr/share/ri/1.8/site/Wx/Size/cdesc-Size.yaml
-  /usr/share/ri/1.8/site/Wx/Size/to_s-i.yaml
-  /usr/share/ri/1.8/site/Wx/Sizer/add_item-i.yaml
-  /usr/share/ri/1.8/site/Wx/Sizer/cdesc-Sizer.yaml
-  /usr/share/ri/1.8/site/Wx/Sound/cdesc-Sound.yaml
-  /usr/share/ri/1.8/site/Wx/Sound/play-c.yaml
-  /usr/share/ri/1.8/site/Wx/StandardPaths/cdesc-StandardPaths.yaml
-  /usr/share/ri/1.8/site/Wx/TextCtrl/cdesc-TextCtrl.yaml
-  /usr/share/ri/1.8/site/Wx/TextUrlEvent/cdesc-TextUrlEvent.yaml
-  /usr/share/ri/1.8/site/Wx/TextUrlEvent/get_url-i.yaml
-  /usr/share/ri/1.8/site/Wx/Timer/after-c.yaml
-  /usr/share/ri/1.8/site/Wx/Timer/cdesc-Timer.yaml
-  /usr/share/ri/1.8/site/Wx/Timer/every-c.yaml
-  /usr/share/ri/1.8/site/Wx/ToolBar/add_item-i.yaml
-  /usr/share/ri/1.8/site/Wx/ToolBar/cdesc-ToolBar.yaml
-  /usr/share/ri/1.8/site/Wx/ToolBarTool/cdesc-ToolBarTool.yaml
-  /usr/share/ri/1.8/site/Wx/TreeCtrl/cdesc-TreeCtrl.yaml
-  /usr/share/ri/1.8/site/Wx/TreeCtrl/get_children-i.yaml
-  /usr/share/ri/1.8/site/Wx/TreeCtrl/get_item_rect-i.yaml
-  /usr/share/ri/1.8/site/Wx/TreeCtrl/get_label_rect-i.yaml
-  /usr/share/ri/1.8/site/Wx/VBoxSizer/cdesc-VBoxSizer.yaml
-  /usr/share/ri/1.8/site/Wx/VBoxSizer/new-c.yaml
-  /usr/share/ri/1.8/site/Wx/Window/cdesc-Window.yaml
-  /usr/share/ri/1.8/site/Wx/Window/evt_paint-i.yaml
-  /usr/share/ri/1.8/site/Wx/Window/find_window_by_id-i.yaml
-  /usr/share/ri/1.8/site/Wx/Window/find_window_by_label-i.yaml
-  /usr/share/ri/1.8/site/Wx/Window/find_window_by_name-i.yaml
-  /usr/share/ri/1.8/site/Wx/Window/paint_buffered-i.yaml
-  /usr/share/ri/1.8/site/Wx/XmlResource/cdesc-XmlResource.yaml
-  /usr/share/ri/1.8/site/Wx/XmlResource/load_wizard-i.yaml
-  /usr/share/ri/1.8/site/Wx/XmlResource/load_wizard_subclass-i.yaml
-  /usr/share/ri/1.8/site/Wx/args_as_list-c.yaml
-  /usr/share/ri/1.8/site/Wx/cdesc-Wx.yaml
-  /usr/share/ri/1.8/site/Wx/define_keyword_ctors-c.yaml
-  /usr/share/ri/1.8/site/Wx/find_const-c.yaml
-  /usr/share/ri/1.8/site/WxRubyStyleAccessors/cdesc-WxRubyStyleAccessors.yaml
-  /usr/share/ri/1.8/site/WxRubyStyleAccessors/method_missing-i.yaml
-
-------------------
-
 Port Notes:
+
+----- version 2.0.1-1 -----
+Version bump.
 
 ----- version 2.0.0-10 -----
 Initial release for Cygwin 1.7.
