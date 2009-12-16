@@ -1,3 +1,5 @@
+swig/classes/include/wxStyledTextCtrl.h:1795: Error: Syntax error in input(1).
+
 --- origsrc/wxruby-1.9.7/swig/classes/include/wxStyledTextCtrl.h	2008-05-10 05:01:21.000000000 -0500
 +++ src/wxruby-1.9.7/swig/classes/include/wxStyledTextCtrl.h	2008-05-22 07:07:08.687500000 -0500
 @@ -1791,7 +1791,7 @@
