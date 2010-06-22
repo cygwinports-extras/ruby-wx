@@ -1,0 +1,171 @@
+For SWIG 2.0.0: s/cWx/SwigClassWx/g
+
+--- origsrc/wxruby-2.0.1/rakefile	2009-09-08 15:36:55.000000000 -0500
++++ src/wxruby-2.0.1/rakefile	2010-06-22 02:03:01.023467100 -0500
+@@ -37,7 +37,7 @@ else
+   raise "This version of Ruby (#{RUBY_VERSION}) is not supported"
+ end
+ # SWIG 1.3.39 introduced changes incompatible with swig/fixmodule.rb etc
+-SWIG_MAXIMUM_VERSION = '1.3.38'
++SWIG_MAXIMUM_VERSION = '2.0.0'
+ 
+ # SOURCE FILE GROUPS
+ # THE UNADORNED NAMES OF ALL THE WX OBJECT CLASSES TO BE BUILT
+--- origsrc/wxruby-2.0.1/swig/classes/App.i	2009-09-08 15:36:55.000000000 -0500
++++ src/wxruby-2.0.1/swig/classes/App.i	2010-06-22 02:52:37.974738900 -0500
+@@ -52,9 +52,9 @@ GC_NEVER(wxRubyApp);
+ 
+ %{
+ 
+-extern swig_class cWxEvtHandler;
+-extern swig_class cWxWindow;
+-extern swig_class cWxEvent;
++extern swig_class SwigClassWxEvtHandler;
++extern swig_class SwigClassWxWindow;
++extern swig_class SwigClassWxEvent;
+ extern void GC_SetWindowDeleted(void*);
+ extern "C" void Init_wxRubyStockObjects();
+ extern void wxRuby_MarkProtectedEvtHandlerProcs();
+@@ -90,7 +90,7 @@ public:
+ 	// Check if it's a valid object (sometimes SWIG doesn't return what we're
+ 	// expecting), a descendant of Wx::Window, and if it has not yet been
+ 	// deleted by WxWidgets; if so, mark it.
+-	if ( TYPE(rb_obj) == T_DATA && rb_obj_is_kind_of(rb_obj, cWxWindow.klass) )
++	if ( TYPE(rb_obj) == T_DATA && rb_obj_is_kind_of(rb_obj, SwigClassWxWindow.klass) )
+ 	  {
+ 		rb_gc_mark(rb_obj);
+ 	  }
+--- origsrc/wxruby-2.0.1/swig/classes/ArtProvider.i	2009-09-08 15:36:55.000000000 -0500
++++ src/wxruby-2.0.1/swig/classes/ArtProvider.i	2010-06-22 02:52:51.431508600 -0500
+@@ -24,8 +24,8 @@ typedef wxString wxArtClient;
+ 
+ %{
+ 
+-extern swig_class cWxSize;
+-extern swig_class cWxObject;
++extern swig_class SwigClassWxSize;
++extern swig_class SwigClassWxObject;
+ 
+ class wxRubyArtProvider : public wxArtProvider
+ {
+@@ -40,7 +40,7 @@ class wxRubyArtProvider : public wxArtPr
+ 
+     v_id     = WXSTR_TO_RSTR(id);
+     v_client = WXSTR_TO_RSTR(client);
+-    v_size   = SWIG_NewClassInstance(cWxSize.klass, SWIGTYPE_p_wxSize);
++    v_size   = SWIG_NewClassInstance(SwigClassWxSize.klass, SWIGTYPE_p_wxSize);
+     wxSize *size_ptr = new wxSize(size);
+     DATA_PTR(v_size) = size_ptr;
+ 	
+--- origsrc/wxruby-2.0.1/swig/classes/EvtHandler.i	2009-09-08 15:36:55.000000000 -0500
++++ src/wxruby-2.0.1/swig/classes/EvtHandler.i	2010-06-22 02:52:59.943995500 -0500
+@@ -13,7 +13,7 @@ GC_MANAGE_AS_OBJECT(wxEvtHandler);
+ %include "include/wxEvtHandler.h"
+ 
+ %runtime{
+-extern swig_class cWxEvtHandler;
++extern swig_class SwigClassWxEvtHandler;
+ 
+ // Internally, all event handlers are anonymous ruby Proc objects,
+ // created by EvtHandler#connect. These need to be preserved from Ruby's
+@@ -108,7 +108,7 @@ public:
+ 	  event_type = wxEVT_NULL;
+ 	else if ( TYPE(evtSpecifier) == T_SYMBOL ) // Symbol handler method
+ 	  {
+-		VALUE rb_evt_type = rb_funcall(cWxEvtHandler.klass, 
++		VALUE rb_evt_type = rb_funcall(SwigClassWxEvtHandler.klass, 
+ 									   rb_intern("event_type_for_name"),
+ 									   1, evtSpecifier);
+ 		if ( rb_evt_type != Qnil )
+--- origsrc/wxruby-2.0.1/swig/common.i	2009-09-08 15:36:55.000000000 -0500
++++ src/wxruby-2.0.1/swig/common.i	2010-06-22 02:36:27.085207200 -0500
+@@ -55,7 +55,7 @@
+ #endif
+ 
+ extern VALUE mWxruby2; // The global Wxruby2 module
+-extern swig_class cWxTopLevelWindow; // used for wxWindow typemap in typemap.i
++extern swig_class SwigClassWxTopLevelWindow; // used for wxWindow typemap in typemap.i
+ extern bool GC_IsWindowDeleted(void *ptr);
+ 
+ // Defined in wx.i; getting, setting and using swig_type <-> ruby class
+--- origsrc/wxruby-2.0.1/swig/fixmodule.rb	2009-09-08 15:36:55.000000000 -0500
++++ src/wxruby-2.0.1/swig/fixmodule.rb	2010-06-22 02:17:16.221381600 -0500
+@@ -38,12 +38,12 @@ def fixmodule(filename)
+     File.foreach(broken) do | line |
+       
+       # if we find the definition of our class variable,
+-      if (line.index('swig_class c') and not line.index("extern"))
++      if (line.index('swig_class SwigClass') and not line.index("extern"))
+         puts("class #{wx_name}")
+         # declare our (primary) base class so we can use it as our parent
+         result = []
+         if (parent_wxklass)
+-          result << "extern swig_class cWx#{parent_name};"
++          result << "extern swig_class SwigClassWx#{parent_name};"
+         end
+         result << line
+         line = result.join("\n")
+@@ -117,8 +117,8 @@ DECLARE_DYNAMIC_CLASS(SwigDirector_wxTre
+           #initialize our primary parent
+           result << "    extern void Init_wx#{parent_name}();"
+           result << "    Init_wx#{parent_name}();"
+-          result << "    //extern swig_class cWx#{parent_name};"
+-          parent_klass = "cWx#{parent_name}.klass"
++          result << "    //extern swig_class SwigClassWx#{parent_name};"
++          parent_klass = "SwigClassWx#{parent_name}.klass"
+           # define us under our parent instead of under ruby's Object
+           line = line.gsub(/rb_cObject/, parent_klass)
+         end
+--- origsrc/wxruby-2.0.1/swig/shared/control_with_items.i	2009-09-08 15:36:55.000000000 -0500
++++ src/wxruby-2.0.1/swig/shared/control_with_items.i	2010-06-22 02:53:04.976283300 -0500
+@@ -15,7 +15,7 @@
+ %feature("nodirector") *::SetClientObject(int  n, wxClientData * data);
+ 
+ %{
+-  extern swig_class cWxControlWithItems;
++  extern swig_class SwigClassWxControlWithItems;
+   extern void mark_wxControlWithItems(void* ptr);
+ %}
+ 
+--- origsrc/wxruby-2.0.1/swig/typemap.i	2009-09-08 15:36:55.000000000 -0500
++++ src/wxruby-2.0.1/swig/typemap.i	2010-06-22 02:36:39.157897700 -0500
+@@ -367,7 +367,7 @@
+   if ( ! rb_const_defined(mWxruby2, rb_intern("THE_APP") ) )
+ 	{ rb_raise(rb_eRuntimeError,
+ 			   "Cannot create a Window before App.main_loop has been called");}
+-  if ( ! $1 && ! rb_obj_is_kind_of(self, cWxTopLevelWindow.klass) )
++  if ( ! $1 && ! rb_obj_is_kind_of(self, SwigClassWxTopLevelWindow.klass) )
+ 	{ rb_raise(rb_eArgError, 
+ 			   "Window parent argument must not be nil"); }
+ }
+--- origsrc/wxruby-2.0.1/swig/wx.i	2009-09-08 15:36:55.000000000 -0500
++++ src/wxruby-2.0.1/swig/wx.i	2010-06-22 02:34:05.689119800 -0500
+@@ -131,8 +131,8 @@ VALUE wxRuby_WrapWxObjectInRuby(wxObject
+ // round this by tracking Event objects created on the ruby side with eg
+ // CommandEvent.new, but never tracking, marking or freeing those
+ // generated on the C++ side.
+-extern swig_class cWxEvtHandler; 
+-extern swig_class cWxEvent;
++extern swig_class SwigClassWxEvtHandler; 
++extern swig_class SwigClassWxEvent;
+ // Cached reference to EvtHandler evt_type_id -> ruby_event_class map
+ VALUE Evt_Type_Map = NULL;
+ 
+@@ -142,7 +142,7 @@ VALUE wxRuby_WrapWxEventInRuby(wxEvent *
+   if ( ! Evt_Type_Map )
+     {
+       VALUE map_name = rb_str_new2("EVENT_TYPE_CLASS_MAP");
+-      Evt_Type_Map = rb_const_get(cWxEvtHandler.klass, 
++      Evt_Type_Map = rb_const_get(SwigClassWxEvtHandler.klass, 
+                                   rb_to_id(map_name) );
+     }
+ 
+@@ -154,7 +154,7 @@ VALUE wxRuby_WrapWxEventInRuby(wxEvent *
+   // Check we have a valid class; warn and map to default Wx::Event if not
+   if ( NIL_P(rb_event_class) )
+     {
+-      rb_event_class = cWxEvent.klass;
++      rb_event_class = SwigClassWxEvent.klass;
+       rb_warning("Unmapped event type %i", wx_event->GetEventType());
+     }
+ 
